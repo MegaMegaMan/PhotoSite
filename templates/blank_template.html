@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+{% block header %}
+<head>
+    <meta charset="utf-8">
+    <title>Персональная страница</title>
+    <link rel="stylesheet" href="{% static "photosite/blank_template.css" %}"/>
+</head>
+
+<body>
+    <header>
+              
+    </header>
+    	<div class="menu">
+    	<div class="nav ph-line-nav">
+   			<a href="{% url "index" %}">главная</a>
+   			<a href="{% url "news:news_list" %}">новости</a>
+   			<a href="#">фотоальбом</a>
+   			<a href="#">контакты</a>
+   			<div class="effect"></div>
+		</div>
+		</div> 
+{% endblock header %}
+{% block content%}
+{% endblock content%}
+{% block footer%}
+{% endblock footer%}
+</body>
+</html>

@@ -1,0 +1,75 @@
+header {
+    display: block;
+    height: 170px;
+    background: #000000;
+}
+
+.menu{
+	background: #000000;
+}
+
+.nav {
+    background: #000000;
+    overflow: hidden;
+    position: relative;
+    width: 60%;
+    height: 50px;
+    text-align: center;
+    margin: 0px auto;
+    border-bottom: solid 4px #cccccc;
+
+}
+
+.nav a {
+    background: #000000;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    float: left;
+    padding: 1em 0 2em 0;
+    width: 25%;
+    color: #666666;
+    transition: .7s;
+    outline: none;
+
+}
+
+.nav a:hover {
+    color: #cccccc;
+}
+
+.effect {
+    position: absolute;
+    left: -12.5%;
+    transition: 0.2s ease-in-out;
+}
+
+.nav a:nth-child(1):hover ~ .effect {
+    left: 12.5%;
+    /* середина первого <a> */
+}
+
+.nav a:nth-child(2):hover ~ .effect {
+    left: 37.5%;
+    /* середина второго <a> */
+}
+
+.nav a:nth-child(3):hover ~ .effect {
+    left: 62.5%;
+    /* середина третьего <a> */
+}
+
+.nav a:nth-child(4):hover ~ .effect {
+    left: 87.5%;
+    /* середина четвертого <a> */
+}
+
+.ph-line-nav .effect {
+    width: 110px;
+    height: 7px;
+    bottom: 0px;
+    background: #cccccc;
+    box-shadow: 0 1px 0 white;
+    margin-left:-56px;
+}
+
