@@ -13,9 +13,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='News',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
                 ('news_date', models.DateTimeField(verbose_name='date published')),
-                ('news_text', models.CharField(max_length=200)),
+                ('news_text', models.CharField(max_length=800)),
             ],
         ),
     ]

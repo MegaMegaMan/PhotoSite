@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'indexpage',
     'news',
+    'photos',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,3 +112,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/home/user/www/photosite/media/'
+
+MEDIA_URL = '/media/'
