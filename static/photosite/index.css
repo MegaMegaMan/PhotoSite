@@ -12,6 +12,12 @@
 
 }
 
+.effect {
+    position: absolute;
+    left: 12.5%;
+    transition: 0.2s ease-in-out;
+}
+
 .left {
 	display: block;
 	background: #000000;
