@@ -1,0 +1,28 @@
+{% extends "blank_template.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "photosite/albums.css" %}"/>
+<div class="index_content">
+	<div class="left">
+			
+	</div>
+	<div class="slider">
+		{% if all_albums_list%}
+		<table align="center" cellspacing="20" >
+			{% for albums in all_albums_list%}
+				{% cycle '<tr>' '' '</tr>' '' as count silent%}
+					{{ count }}
+					<td align="center">
+						<div class="album"><a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.jpg" %}"><br><br></a></div>
+						<li>{{ albums.album_name }}</li>
+					</td>
+			{% endfor%}	
+		</table>	
+		{% endif %}
+	</div>
+	<div class="right">
+		
+	</div>
+</div>
+
+{% endblock content %}

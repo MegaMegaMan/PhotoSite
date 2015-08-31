@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'indexpage',
     'news',
     'photos',
+    'easy_thumbnails',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,6 +114,6 @@ STATICFILES_DIRS = (
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/user/www/photosite/media/'
+MEDIA_ROOT = '/home/user/www/photosite/static/media/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/media/'

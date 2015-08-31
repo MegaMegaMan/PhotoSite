@@ -14,7 +14,7 @@
 
 .effect {
     position: absolute;
-    left: 37.5%;
+    left: 62.5%;
     transition: 0.2s ease-in-out;
 }
 
@@ -24,6 +24,7 @@
     width: 20%;
     height: 100%;
 }
+
 
 .slider {
     display: block;

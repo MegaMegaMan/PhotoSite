@@ -5,7 +5,7 @@
     position: relative;
     /*top: 231px;*/
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: center; 
     overflow: hidden; 
     background: #000000;
@@ -14,7 +14,7 @@
 
 .effect {
     position: absolute;
-    left: 12.5%;
+    left: 62.5%;
     transition: 0.2s ease-in-out;
 }
 
@@ -30,6 +30,7 @@
 	height: 100%;
 	width: 60%;
 	background: #000000;
+	color: #666666;
 }
 
 .right {
@@ -44,14 +45,10 @@
 	padding: 5em 2% 0 2%;
 }
 
-.right a {
+.right li {
 	color: #666666;
 	transition: .2s;
 	outline: none;
 	text-decoration: none;
 	
 	font-size: 0.9em;
-}
-.right a:hover {
-	color: #cccccc;
-}

@@ -16,8 +16,8 @@
     	<div class="nav ph-line-nav">
    			<a href="{% url "index" %}">главная</a>
    			<a href="{% url "news:news_list" %}">новости</a>
-   			<a href="#">фотоальбом</a>
-   			<a href="#">контакты</a>
+   			<a href="{% url "photos:albums" %}">фотоальбом</a>
+   			<a href="{% url "contacts:contacts" %}">контакты</a>
    			<div class="effect"></div>
 		</div>
 		</div> 

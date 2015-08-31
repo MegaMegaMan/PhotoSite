@@ -18,7 +18,9 @@ from django.contrib import admin
 
 
 urlpatterns = [
+	url(r'^photos/', include('photos.urls',namespace='photos')),
     url(r'^news/', include('news.urls',namespace='news')),
+    url(r'^contacts/', include('contacts.urls',namespace='contacts')),
     url(r'^$', include('indexpage.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

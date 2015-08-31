@@ -1,3 +1,6 @@
+body{
+    background: #000000;
+}
 header {
     display: block;
     height: 170px;

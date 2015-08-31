@@ -1,0 +1,59 @@
+{% extends "blank_template.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+<link rel="stylesheet" href="{% static "photosite/photo.css" %}"/>
+<div class="index_content">
+	<div class="left">
+			
+	</div>
+	<div class="slider">
+	<form action="" method="post">{% csrf_token %}
+		<table align="center" cellspacing="20">
+			<tr>
+				<td align="center">
+					{% thumbnail photos.photo_link 1024x1024 upscale as thumb %}
+					<img src="{{ thumb.url }}"><br><br>
+				</td>	
+			</tr>
+			<tr>
+				<td>
+					Имя*
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<input type="text" size="88" maxlength="50" required name="user_name"></input>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Комментарий*
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea cols="100" rows="10" maxlength="500" required name="text"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Отправить"></input>
+				</td>
+			</tr>
+		</table>	
+		</form>
+	</div>
+	<div class="right">
+		{% if comments_list %}
+			{% for comments in comments_list %}
+			<li>{{comments.comment_date|date:"d M Y H:i"}}</li>
+			<li>{{ comments.comment_user }}</li><br>
+			<li>{{ comments.comment_text }}</li><br>
+			<li>---------------</li><br>
+			{% endfor %}
+		{% endif %}	
+	</div>
+</div>
+
+{% endblock content %}

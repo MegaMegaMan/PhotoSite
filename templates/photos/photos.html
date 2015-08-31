@@ -1,0 +1,38 @@
+{% extends "blank_template.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+<link rel="stylesheet" href="{% static "photosite/albums.css" %}"/>
+<div class="index_content">
+	<div class="left">
+			
+	</div>
+	<div class="slider">
+		{% if all_photos_list%}
+		<table align="center" cellspacing="20">
+			<tr>
+			{% for photos in all_photos_list%}
+				{% cycle '<tr>' '' '' '</tr>' '' '' as count silent%}
+					{{ count }}
+					<td align="center" valign="bottom">
+						{% thumbnail photos.photo_link 350x350 upscale as thumb %}
+						<a href="{% url 'photos:photo' photos.id %}"><img src="{{ thumb.url }}" ><br><br></a>
+						{% for comment in comments %}
+							{% if comment = photos %}
+								<li>Комментариев: {{ comment.comments_count }}</li>	
+							{% endif %}
+						{% endfor%}
+						<li>{{ photos.photo_description }}</li><br>
+						<br>
+					</td>
+			{% endfor%}	
+			</tr>
+		</table>	
+		{% endif %}
+	</div>
+	<div class="right">
+		
+	</div>
+</div>
+
+{% endblock content %}
