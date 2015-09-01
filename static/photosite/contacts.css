@@ -14,7 +14,7 @@
 
 .effect {
     position: absolute;
-    left: 62.5%;
+    left: 87.5%;
     transition: 0.2s ease-in-out;
 }
 
@@ -25,40 +25,15 @@
     height: 100%;
 }
 
-
 .slider {
     display: block;
     position: relative;
     height: 100%;
     width: 60%;
     background: #000000;
-    color: #cccccc;
+    color: #666666;
     padding-top: 20%;
     list-style: none;
-}
-
-.slider a {
-    color: #666666;
-    transition: .2s;
-    outline: none;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-.slider a:hover {
-    color: #cccccc;
-}
-
-.album {
-	position: relative;
-}
-
-.cover {
-	position: absolute;
-	left: 84px;
-	top: 60px;
-	z-index: 1;
-	
 }
 
 .right {

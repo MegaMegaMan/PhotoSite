@@ -4,8 +4,10 @@ from time import localtime,strftime
 class Album(models.Model):
 	def __str__(self):
 		return self.album_name
+	def getAlbum(instance, filename):
+		return  '%s/%s' % (instance.album_name,'cover-' + strftime("%d%m%Y-%H:%M:%S"))	
 	album_name = models.CharField(max_length=100)
-#	album_photo = models.ForeignKey('Photo')
+	album_photo = models.ImageField(upload_to=getAlbum)
 
 class Photo(models.Model):
 	def getAlbum(instance, filename):

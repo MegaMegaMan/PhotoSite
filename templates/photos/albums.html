@@ -1,5 +1,6 @@
 {% extends "blank_template.html" %}
 {% load static %}
+{% load thumbnail %}
 {% block content %}
 <link rel="stylesheet" href="{% static "photosite/albums.css" %}"/>
 <div class="index_content">
@@ -8,13 +9,21 @@
 	</div>
 	<div class="slider">
 		{% if all_albums_list%}
-		<table align="center" cellspacing="20" >
+		<table align="center" cellspacing="100" >
 			{% for albums in all_albums_list%}
 				{% cycle '<tr>' '' '</tr>' '' as count silent%}
 					{{ count }}
 					<td align="center">
-						<div class="album"><a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.jpg" %}"><br><br></a></div>
-						<li>{{ albums.album_name }}</li>
+						<div class="album">
+							{% if albums.album_photo %}
+								{% thumbnail albums.album_photo 147x97 crop  as thumb %}
+								<div class="cover">
+									<img src="{{ thumb.url }}">
+								</div>	
+							{% endif %}	
+							<a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.png" %}"><br><br></a>
+							<li>{{ albums.album_name }}</li>
+						</div>
 					</td>
 			{% endfor%}	
 		</table>	
