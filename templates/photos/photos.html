@@ -22,7 +22,11 @@
 								<li>Комментариев: {{ comment.comments_count }}</li>	
 							{% endif %}
 						{% endfor%}
-						<li>{{ photos.photo_description }}</li><br>
+						{% if photos.photo_description == "" %}
+								<br><li></li><br>
+							{% else %}
+								<li>{{ photos.photo_description }}</li><br>
+						{% endif %}
 						<br>
 					</td>
 			{% endfor%}	

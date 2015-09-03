@@ -18,7 +18,7 @@
 							{% if albums.album_photo %}
 								{% thumbnail albums.album_photo 147x97 crop  as thumb %}
 								<div class="cover">
-									<img src="{{ thumb.url }}">
+									<a href="{% url 'photos:photos' albums.id %}"><img src="{{ thumb.url }}"></a>
 								</div>	
 							{% endif %}	
 							<a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.png" %}"><br><br></a>
