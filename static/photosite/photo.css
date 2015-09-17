@@ -31,18 +31,31 @@
 	width: 60%;
 	background: #000000;
 	color: #666666;
+	top: 10%;
+}
+
+.slider img {
+	margin:  5% 0%;
+}
+
+.slider ul {
+	list-style: none;
+	width: 100%;
 }
 
 .right {
 	display: block;
 	position: relative;
 	background: #000000;
-	width: 16%;	
+	width: 20%;	
 	height: 100%;
 	text-align: left;
 	color: #cccccc;
-	list-style: none;
-	padding: 5em 2% 0 2%;
+}
+
+.right ul {
+    list-style: none;
+    padding: 5% 5% 0% 5%;
 }
 
 .right li {

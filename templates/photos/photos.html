@@ -16,7 +16,7 @@
 					{{ count }}
 					<td align="center" valign="bottom">
 						{% thumbnail photos.photo_link 350x350 upscale as thumb %}
-						<a href="{% url 'photos:photo' photos.id %}"><img src="{{ thumb.url }}" ><br><br></a>
+						<a href="{% url 'photos:photo' photos.id %}"><img src="{{ thumb.url }}" width="100%"><br><br></a>
 						{% for comment in comments %}
 							{% if comment = photos %}
 								<li>Комментариев: {{ comment.comments_count }}</li>	

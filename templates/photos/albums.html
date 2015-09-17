@@ -9,7 +9,7 @@
 	</div>
 	<div class="slider">
 		{% if all_albums_list%}
-		<table align="center" cellspacing="100" >
+		<table align="center" cellspacing="60%" >
 			{% for albums in all_albums_list%}
 				{% cycle '<tr>' '' '</tr>' '' as count silent%}
 					{{ count }}
@@ -18,10 +18,14 @@
 							{% if albums.album_photo %}
 								{% thumbnail albums.album_photo 147x97 crop  as thumb %}
 								<div class="cover">
-									<a href="{% url 'photos:photos' albums.id %}"><img src="{{ thumb.url }}"></a>
+									<a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.png" %}" width="100%"></a>
+									<div class="img">
+										<a href="{% url 'photos:photos' albums.id %}"><img src="{{ thumb.url }}" width="100%"></a>
+									</div>
 								</div>	
+								<br><br>
 							{% endif %}	
-							<a href="{% url 'photos:photos' albums.id %}"><img src="{% static "photosite/album.png" %}"><br><br></a>
+							
 							<li>{{ albums.album_name }}</li>
 						</div>
 					</td>

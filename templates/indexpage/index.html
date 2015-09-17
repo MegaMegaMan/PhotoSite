@@ -12,8 +12,10 @@
             <ul> <!-- Слайды -->
             	{% for slide in slides %}
             	<li>
-            		{% thumbnail slide.slide_photo 900x550 crop as thumb %}
-                	<img src="{{ thumb.url }}"/>
+            		<div align="center">
+            			{% thumbnail slide.slide_photo 900x550 crop as thumb %}
+            			<img src="{{ thumb.url }}" width="100%">
+                	</div>	
                 </li>
                 {% endfor%}	
             </ul>
@@ -22,8 +24,10 @@
 	<div class="right">
 		{% if latest_news_list %}
 			{% for news in latest_news_list %}
-			<li>{{news.news_date|date:"d M Y H:i"}}</li>
-			<li><a href="{% url 'news:news' news.id %}">{{ news.news_text|truncatechars:200 }}</a></li><br>
+			<ul>
+				<li>{{news.news_date|date:"d M Y H:i"}}</li>
+				<li><a href="{% url 'news:news' news.id %}">{{ news.news_text|truncatechars:200 }}</a></li>
+			</ul>
 			{% endfor %}
 		{% endif %}
 	</div>

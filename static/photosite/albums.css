@@ -54,11 +54,14 @@
 }
 
 .cover {
-	position: absolute;
-	left: 84px;
-	top: 60px;
-	z-index: 1;
-	
+	position: relative;	
+}
+
+.img {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 47%;
 }
 
 .right {
